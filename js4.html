@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>countdown</title>
+	<style type="text/css">
+		h1{
+			text-align: center;
+			text-align: center;
+			color: blue;
+		}		
+		.timer{
+			text-align: center;
+			height: 95px;
+			width: 100px;
+			float: left;
+			margin: auto;
+			align-items: center;
+			padding: 20px;
+
+		}
+		.timer input{
+			width: 55px;
+			height: 40px;
+			font-size: 50px;
+			text-align: center;
+		}
+		.timer label{
+			
+			font-size: 25px;
+			color: blue;
+			text-align: center;
+		}
+
+	</style>
+
+
+</head>
+<body>
+	<h1>Hurry Up! book your seat Now. </h1>
+	<h1 id="enddate">28 December 2022 10:30 PM</h1>
+	<div style="align-items: center;background-color: blanchedalmond; height: 100px; width: 600px; border: 1px solid; margin: 70px auto; text-align: center;">
+		<div class="timer">
+			<input type="text" name="" value="0" readonly><br>
+			<label>Days</label>
+		</div>
+		<div class="timer">
+			<input type="text" name="" value="0" readonly><br>
+			<label>Hours</label>
+		</div>
+		<div class="timer">
+			<input type="text" name="" value="0" readonly><br>
+			<label>Minutes</label>
+		</div>
+		<div class="timer">
+			<input type="text" name="" value="0" readonly><br>
+			<label>Seconds</label>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		const enddate='28 December 2022 04:01 PM'
+		document.getElementById('enddate').innerHTML=enddate;
+		const inputs=document.querySelectorAll("input")
+		function timer(){
+			const end= new Date(enddate);
+			const now=new Date();
+			const diff=(end-now)/1000;
+			if(diff<0) return;
+			inputs[0].value= Math.floor(diff/3600/24);
+			inputs[1].value= Math.floor((diff/3600)%24);
+			inputs[2].value=Math.floor((diff/60)%60);
+			inputs[3].value=Math.floor(diff%60);
+
+
+
+		}
+		timer()
+		setInterval(timer,1000);
+
+
+
+
+	</script>
+</body>
+</html>

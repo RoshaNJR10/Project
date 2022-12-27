@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>hide and show content</title>	
+	
+</head>
+<body>
+	<button onclick="hideShow()">click me</button>
+	<h1 id="myheader" style="height: 70px; border: 5px solid black; margin: 15px; padding: 20px">hellow student.</h1>
+
+<script>
+		var div=document.getElementById('myheader');
+		var display=1;
+		function hideShow(){
+			if (display==0){
+				div.style.display='block';
+				display=1;
+
+			}
+			else{
+				div.style.display='none';
+				display=0;
+			}
+		}
+
+
+	</script>
+</body>
+</html>
